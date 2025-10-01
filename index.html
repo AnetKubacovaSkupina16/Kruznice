@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Kružnice</title>
+</head>
+<body>
+  <h1>Vykreslení bodů na kružnici</h1>
+  <form action="/draw" method="post">
+    <label>Střed X: <input type="number" name="center_x" value="0"></label><br>
+    <label>Střed Y: <input type="number" name="center_y" value="0"></label><br>
+    <label>Poloměr (m): <input type="number" name="radius" value="5"></label><br>
+    <label>Počet bodů: <input type="number" name="points" value="8"></label><br>
+    <label>Barva bodů: <input type="color" name="color" value="#ff0000"></label><br>
+    <button type="submit">Vykreslit</button>
+  </form>
+</body>
+</html>

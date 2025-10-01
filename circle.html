@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Kružnice</title>
+</head>
+<body>
+  <h2>Výsledek</h2>
+  <svg width="600" height="600" style="border:1px solid #ccc">
+    <line x1="0" y1="300" x2="600" y2="300" stroke="black"/>
+    <line x1="300" y1="0" x2="300" y2="600" stroke="black"/>
+    <circle cx="300" cy="300" r="{{ radius|float * 20 }}" stroke="gray" fill="none"/>
+    {% for i in range(points|int) %}
+      {% set angle = (2 * 3.14159 / points|int) * i %}
+      {% set x = 300 + radius|float * 20 * (angle|cos) %}
+      {% set y = 300 + radius|float * 20 * (angle|sin) %}
+      <circle cx="{{ x }}" cy="{{ y }}" r="5" fill="{{ color }}"/>
+    {% endfor %}
+  </svg>
+
+  <form action="/export" method="post">
+    <input type="hidden" name="center_x" value="{{ center_x }}">
+    <input type="hidden" name="center_y" value="{{ center_y }}">
+    <input type="hidden" name="radius" value="{{ radius }}">
+    <input type="hidden" name="points" value="{{ points }}">
+    <input type="hidden" name="color" value="{{ color }}">
+    <button type="submit">Export do PDF</button>
+  </form>
+
+  <div>
+    <h3>O aplikaci</h3>
+    <p>Autor: Jan Novák<br>
+       Kontakt: jan.novak@example.com<br>
+       Technologie: Python, Flask, HTML, SVG, ReportLab</p>
+  </div>
+</body>
+</html>
