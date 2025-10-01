@@ -36,8 +36,8 @@ st.pyplot(fig)
 # 🧾 Informace o aplikaci
 with st.expander("O aplikaci"):
     st.markdown("""
-    **Autor:** Jan Novák  
-    **Kontakt:** jan.novak@example.com  
+    **Autor:** Aneta Kubáčová  
+    **Kontakt:** aneta.kubacova@seznam.cz 
     **Technologie:** Python, Streamlit, Matplotlib, ReportLab
     """)
 
@@ -51,8 +51,8 @@ if st.button("Exportovat do PDF"):
     pdf.drawString(50, 760, f"Poloměr: {radius} m")
     pdf.drawString(50, 740, f"Počet bodů: {points}")
     pdf.drawString(50, 720, f"Barva bodů: {color}")
-    pdf.drawString(50, 700, "Autor: Jan Novák")
-    pdf.drawString(50, 680, "Kontakt: jan.novak@example.com")
+    pdf.drawString(50, 700, "Autor: Aneta Kubáčová ")
+    pdf.drawString(50, 680, "Kontakt: aneta.kubacova@seznam.cz ")
     pdf.save()
     buffer.seek(0)
     st.download_button("Stáhnout PDF", buffer, file_name="kruznice.pdf")
